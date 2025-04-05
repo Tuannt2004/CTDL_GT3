@@ -8,8 +8,7 @@ int main(){
         for(int i=0;i<n;i++){
             cin >> a[i];
         }
-        stack<string> kq;
-        int dem=0,xx=0, j=0;
+        int xx=0, j=0;
         for(int i=0;i<n;i++){
             xx = a[i];
             j =i-1;
@@ -18,20 +17,11 @@ int main(){
                 j--;
             }
             a[j+1]=xx;
-            string x ="";
-            x+=("Buoc " + to_string(dem) + ": ");
+            cout << "Buoc " << i << ": ";
             for(int j =0;j<=i;j++){
-                x+=to_string(a[j]);
-                if(j < i){
-                    x+=' ';
-                }
+                cout << a[j] << " ";
             }
-            dem++;
-            kq.push(x);
-        }
-        while(!kq.empty()){
-            cout << kq.top() << endl;
-            kq.pop();
+            cout << endl;
         }
     }
     return 0;
